@@ -21,8 +21,9 @@ DATASET_DIR=~/datasets/cdc
 
 ### Fields
 
-| submission_date | Date of counts | Date & Time
+| Column Name | Description | Type |
 | --- | --- | --- |
+| submission_date | Date of counts | Date & Time
 | state  | Jurisdiction | Plain Text |
 | tot_cases  | Total number of cases | Number |
 | conf_cases  | Total confirmed cases | Number |
