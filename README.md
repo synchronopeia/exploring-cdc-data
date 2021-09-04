@@ -1,5 +1,7 @@
 # Exploring CDC Data
 
+## Description
+
 Start simple and gradually build up to something significant!
 
 ## Requirements
@@ -15,22 +17,23 @@ DATASET_DIR=~/datasets/cdc
 ## TDOD
 
 - [x] Start project (this README).
-- [] Onboard Allison and confirm ```quick_look.py``` works.
+- [ ] Onboard Allison and confirm ```quick_look.py``` works.
 
 ### Fields
 
-submission_date | Date of counts | Date & Time
-state  | Jurisdiction | Plain Text
-tot_cases  | Total number of cases | Number
-conf_cases  | Total confirmed cases | Number
-prob_cases  | Total probable cases | Number
-new_case  | Number of new cases | Number
-pnew_case  | Number of new probable cases | Number
-tot_death  | Total number of deaths | Number
-conf_death  | Total number of confirmed deaths | Number
-prob_death | Total number of probable deaths | Number
-new_death  | Number of new deaths | Number
-pnew_death | Number of new probable deaths | Number
-created_at | Date and time record was created | Date & Time
-consent_cases | If Agree, then confirmed and probable cases are included. If Not Agree, then only total cases are included. | Plain Text
-consent_deaths | If Agree, then confirmed and probable deaths are included. If Not Agree, then only total deaths are included. | Plain Text
+| submission_date | Date of counts | Date & Time
+| --- | --- | --- |
+| state  | Jurisdiction | Plain Text |
+| tot_cases  | Total number of cases | Number |
+| conf_cases  | Total confirmed cases | Number |
+| prob_cases  | Total probable cases | Number |
+| new_case  | Number of new cases | Number |
+| pnew_case  | Number of new probable cases | Number |
+| tot_death  | Total number of deaths | Number |
+| conf_death  | Total number of confirmed deaths | Number |
+| prob_death | Total number of probable deaths | Number |
+| new_death  | Number of new deaths | Number |
+| pnew_death | Number of new probable deaths | Number |
+| created_at | Date and time record was created | Date & Time |
+| consent_cases | If Agree, then confirmed and probable cases are included. If Not Agree, then only total cases are included. | Plain Text |
+| consent_deaths | If Agree, then confirmed and probable deaths are included. If Not Agree, then only total deaths are included. | Plain Text |
