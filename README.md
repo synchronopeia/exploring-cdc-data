@@ -7,7 +7,7 @@ Start simple and gradually build up to something significant!
 ## Requirements
 
 1) The CSV-based datasets are __NOT__ included in this repository. You must download and store them locally (but not in this project directory).
-2) We are using data for _United States COVID-19 Cases and Deaths by State over Time_ available at (https://data.cdc.gov/Case-Surveillance/United-States-COVID-19-Cases-and-Deaths-by-State-o/9mfq-cb36)[data.cdc.gov].
+2) We are using data for _United States COVID-19 Cases and Deaths by State over Time_ available at [data.cdc.gov](https://data.cdc.gov/Case-Surveillance/United-States-COVID-19-Cases-and-Deaths-by-State-o/9mfq-cb36).
 3) You must create a .env file in this project directory. It must specify an environment variable DATASET_DIR with the path to your local directory where the CDC data files are being kept. For example:
 
 ```
