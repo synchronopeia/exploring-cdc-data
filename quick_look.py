@@ -21,40 +21,53 @@ import sys
 # These are the variable declarations
 
 COVID_CASES_FILENAME = "United_States_COVID-19_Cases_and_Deaths_by_State_over_Time.csv"
-DATASET_DIR = ''
+DATASET_DIR = ""
 data = None
 
-# This is the only function definition
+# These are the function definitions
+
+def set_env():
+    global DATASET_DIR
+    try:
+        DATASET_DIR = decouple.config("DATASET_DIR")
+    except decouple.UndefinedValueError as err:
+        print("NameError:", "Your project directory must contain a file named \".env\" with an entry for DATASET_DIR specifying the directory containing your CDC data files (e.g. DATASET_DIR=~/datasets/cdc).")
+        raise
+    except:
+        print("UNKNOWN ERROR")
+        raise
 
 def load_data(csv_path):
     """Attempt to read CSV file at csv_path and return a Pandas CSV data frame."""
     try:
         csv = pd.read_csv(csv_path)
-        print("OK")
         return csv
     except FileNotFoundError as err:
-        print("Unable to find CSV file '" + csv_path + "'.")
+        print("Unable to read CSV file \"" + csv_path + "\".")
         raise
     except:
-        print("ERROR")
+        print("UNKNOWN ERROR")
+        raise
+
+def exit_with_error():
+    print("CSV data not read. Exiting script without doing anything.")
+    sys.exit(1)
 
 # # # # # # # # # # #
 #  --The Script--   #
 # # # # # # # # # # #
 
-# Try to set DATASET_DIR from .env
+# Try to set DATASET_DIR from .env file
 try:
-    DATASET_DIR = decouple.config('DATASET_DIR')
-except decouple.UndefinedValueError as err:
-    print("NameError:", "Your project directory must contain a file named \".env\" with an entry for DATASET_DIR specifying the directory containing your CDC data files (e.g. DATASET_DIR=~/datasets/cdc).")
-    sys.exit(1)
+    set_env()
+except:
+    exit_with_error()
 
 # Try to load the CSV data into a Pandas data frame
 try: 
     data = load_data(os.path.join(DATASET_DIR, COVID_CASES_FILENAME))
 except:
-    print("CSV data not read. Exiting script without doing anything")
-    sys.exit(1)
+    exit_with_error()
 
 # At this point, the variable `data` contains the CSV table and we can do some analysis!
 
