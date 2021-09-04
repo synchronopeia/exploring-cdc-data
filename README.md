@@ -14,12 +14,12 @@ Start simple and gradually build up to something significant!
 DATASET_DIR=~/datasets/cdc
 ```
 
-## TDOD
+## TODO
 
 - [x] Start project (this README).
 - [ ] Onboard Allison and confirm ```quick_look.py``` works.
 
-### Fields
+## Fields
 
 | Column Name | Description | Type |
 | --- | --- | --- |
