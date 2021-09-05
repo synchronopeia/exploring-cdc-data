@@ -19,7 +19,7 @@ DATASET_DIR=~/datasets/cdc
 - [x] Start project (this README).
 - [ ] Onboard Allison and confirm ```quick_look.py``` works.
 
-## Fields
+## Fields for United-States-COVID-19-Cases-and-Deaths-by-State
 
 | Column Name | Description | Type |
 | --- | --- | --- |
@@ -38,3 +38,31 @@ DATASET_DIR=~/datasets/cdc
 | created_at | Date and time record was created | Date & Time |
 | consent_cases | If Agree, then confirmed and probable cases are included. If Not Agree, then only total cases are included. | Plain Text |
 | consent_deaths | If Agree, then confirmed and probable deaths are included. If Not Agree, then only total deaths are included. | Plain Text |
+
+## Design Document - Phase 1 (Proposed)
+
+### Overview
+
+for Phase 1, we wish to create some interesting data visualization with only this dataset.
+
+### Limitations
+
+Without separate demographics data or other-cause mortality data we cannot make per-capita or causal comparisons.
+
+### Solution
+
+#### Heatmaps of _pnew_case_ and _pnew_death_ by State Over Time
+
+Two heatmaps will be generated for comparing state-by state COVID cases and deaths over time. The heatmaps will be based on __quintiles__ for the variables ```pnew_case``` and ```pnew_death```.
+
+#### Heatmaps of Gradient of _pnew_case_ and _pnew_death_ by State Over Time
+
+
+Additionally, two heatmaps will be generated for the __gradients__ of the two variables referenced above, thus providing a representation of the spread of the disease over time.
+
+#### Percent of All Cases That Are Confirmed By State Over Time
+
+It would be interesting to see how the health care system evolved in its ability to accurately diagnose cases over time and by state.
+
+
+
