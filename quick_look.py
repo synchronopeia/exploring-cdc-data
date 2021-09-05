@@ -15,7 +15,7 @@ environment you are running this script in.
 
 import pandas as pd
 import os
-from helpers import get_env
+import helpers
 
 # Variable declarations
 
@@ -26,7 +26,7 @@ data = None
 # Function definition(s)
 
 def load_data(csv_path):
-    """Attempt to read CSV file at csv_path and return a Pandas CSV data frame."""
+    """Attempt to read CSV file at csv_path and return a Pandas data frame."""
     try:
         csv = pd.read_csv(csv_path)
         return csv
@@ -43,15 +43,15 @@ def load_data(csv_path):
 
 # Try to set DATASET_DIR from .env file
 try:
-    DATASET_DIR = get_env("DATASET_DIR")
+    DATASET_DIR = helpers.get_env("DATASET_DIR")
 except:
-    exit_with_error()
+    helpers.exit_with_error()
 
 # Try to load the CSV data into a Pandas data frame
 try: 
     data = load_data(os.path.join(DATASET_DIR, COVID_CASES_FILENAME))
 except:
-    exit_with_error()
+    helpers.exit_with_error()
 
 # At this point, the variable `data` contains the CSV table and we can do some analysis!
 
