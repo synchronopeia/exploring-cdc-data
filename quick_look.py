@@ -9,7 +9,7 @@ The .env file must specify DATASET_DIR. For example:
 
 DATASET_DIR=~/datasets/cdc
 
-This script requires that `pandas` and `decouple` be installed within the Python
+This script requires that `pandas` and `python-decouple` be installed within the Python
 environment you are running this script in.
 """
 
