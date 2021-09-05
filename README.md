@@ -14,6 +14,10 @@ Start simple and gradually build up to something significant!
 DATASET_DIR=~/datasets/cdc
 ```
 
+### Required Packages
+
+```python-decouple``` and ```pandas```
+
 ## TODO
 
 - [x] Start project (this README).
