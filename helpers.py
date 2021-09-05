@@ -1,3 +1,4 @@
+import sys
 import decouple
 
 def get_env(field_name):
@@ -10,3 +11,7 @@ def get_env(field_name):
     except:
         print("UNKNOWN ERROR")
         raise
+
+def exit_with_error():
+    print("CSV data not read. Exiting script without doing anything.")
+    sys.exit(1)

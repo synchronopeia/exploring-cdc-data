@@ -15,7 +15,6 @@ environment you are running this script in.
 
 import pandas as pd
 import os
-import sys
 from helpers import get_env
 
 # Variable declarations
@@ -37,10 +36,6 @@ def load_data(csv_path):
     except:
         print("UNKNOWN ERROR")
         raise
-
-def exit_with_error():
-    print("CSV data not read. Exiting script without doing anything.")
-    sys.exit(1)
 
 # # # # # # # # # # #
 #  --The Script--   #
