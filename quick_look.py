@@ -13,29 +13,18 @@ This script requires that `pandas` and `decouple` be installed within the Python
 environment you are running this script in.
 """
 
-import decouple
 import pandas as pd
 import os
 import sys
+from helpers import get_env
 
-# These are the variable declarations
+# Variable declarations
 
 COVID_CASES_FILENAME = "United_States_COVID-19_Cases_and_Deaths_by_State_over_Time.csv"
 DATASET_DIR = ""
 data = None
 
-# These are the function definitions
-
-def set_env():
-    global DATASET_DIR
-    try:
-        DATASET_DIR = decouple.config("DATASET_DIR")
-    except decouple.UndefinedValueError as err:
-        print("NameError:", "Your project directory must contain a file named \".env\" with an entry for DATASET_DIR specifying the directory containing your CDC data files (e.g. DATASET_DIR=~/datasets/cdc).")
-        raise
-    except:
-        print("UNKNOWN ERROR")
-        raise
+# Function definition(s)
 
 def load_data(csv_path):
     """Attempt to read CSV file at csv_path and return a Pandas CSV data frame."""
@@ -59,7 +48,7 @@ def exit_with_error():
 
 # Try to set DATASET_DIR from .env file
 try:
-    set_env()
+    DATASET_DIR = get_env("DATASET_DIR")
 except:
     exit_with_error()
 
